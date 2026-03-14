@@ -9,9 +9,12 @@ class APIKeys(dict):
     def __init__(self, key_cfg):
         keys = Path(key_cfg).open("r")
         for line in keys:
-            if line.startswith("#"):
+            line = line.strip()
+
+            if not line or line.startswith("#"):
                 continue
-            tag, k = line.strip().split("=")
+
+            tag, k = line.split("=", 1)
             self[tag] = k
 
 def load_common_options(parser):

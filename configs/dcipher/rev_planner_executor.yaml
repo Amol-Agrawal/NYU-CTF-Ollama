@@ -4,7 +4,7 @@ experiment:
 
 planner:
   max_rounds: 30
-  model: gpt-4o-2024-11-20
+  model: qwen3-coder-next:cloud
   temperature: 1.0
   top_p: 1.0
   max_tokens: 4096
@@ -16,7 +16,7 @@ planner:
     - delegate
 executor:
   max_rounds: 100
-  model: gpt-4o-2024-11-20
+  model: qwen3-coder-next:cloud
   temperature: 1.0
   top_p: 1.0
   max_tokens: 4096
@@ -30,7 +30,7 @@ executor:
     - create_file
 autoprompter:
   max_rounds: 5
-  model: gpt-4o-2024-11-20
+  model: qwen3-coder-next:cloud
   temperature: 1.0
   max_tokens: 4096
   prompt: prompts/autoprompt_prompt.yaml

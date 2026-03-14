@@ -61,6 +61,7 @@ class OpenAIBackend(Backend):
     def __init__(self, role, model, tools, api_key, config):
         super().__init__(role, model, tools, config)
         self.client = OpenAI(api_key=api_key)
+    
         self.tool_schemas = [self.get_tool_schema(tool) for tool in tools.values()]
 
     @staticmethod
